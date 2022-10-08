@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <ul>
+                        <li><a href="/mst-pangkat">mst-pangkat</a></li>
+                        <li><a href="/mst-jabatan">mst-jabatan</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

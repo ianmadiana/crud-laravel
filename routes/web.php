@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MstJabatanController;
 use App\Http\Controllers\MstPangkatController;
 
 
@@ -20,14 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//  Route::resource('/mst-pangkat','MstPangkatController');
-// Route::resource('/mst-pangkat', [MstPangkatController::class, 'index']);
- Route::resource('/mst-pangkat', MstPangkatController::class);
+//try php artisan route:clear if controller doesn't exist
+Route::resource('/mst-pangkat', MstPangkatController::class);
+Route::resource('/mst-jabatan', MstJabatanController::class);
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resource('/home', [HomeController::class, 'home']);
 Route::resource('/home', HomeController::class);
 
 Auth::routes();
@@ -37,8 +38,4 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Route::get('/home', [HomeController::class, 'index']);
 
