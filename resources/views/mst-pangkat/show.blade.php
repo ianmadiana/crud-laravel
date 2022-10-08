@@ -4,8 +4,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-        <li class="breadcrumb-item"><a href="/mst-pangkat">
-                Master tabel Pangkat</a></li>
+        <li class="breadcrumb-item"><a href="/mst-pangkat">Master tabel Pangkat</a></li>
         <li class="breadcrumb-item active" aria-current="page">Lihat</li>
     </ol>
 </nav>
@@ -22,8 +21,7 @@
                         </span>
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-primary" href="{{ route('mst-pangkat.index') }}">
-                            Kembali</a>
+                        <a class="btn btn-primary" href="{{ route('mst-pangkat.index') }}">Kembali</a>
                     </div>
                 </div>
                 <div class="card-body">
