@@ -1,4 +1,5 @@
-@extends('adminlte::page') @section('title', 'Master Tabel Jabatan')
+@extends('adminlte::page') 
+@section('title', 'Master Tabel Jabatan')
 @section('content_header')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
