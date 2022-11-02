@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MstJabatanController;
 use App\Http\Controllers\MstPangkatController;
+use App\Http\Controllers\PegawaiController;
 
 
 /*
@@ -26,6 +27,7 @@ Route::get('/', function () {
 //try php artisan route:clear if controller doesn't exist
 Route::resource('/mst-pangkat', MstPangkatController::class);
 Route::resource('/mst-jabatan', MstJabatanController::class);
+Route::resource('/pegawai', PegawaiController::class);
 
 Auth::routes();
 
