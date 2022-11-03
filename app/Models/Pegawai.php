@@ -56,7 +56,7 @@ class Pegawai extends Model
         elseif ($this->agama == "2")
             return "Katholik";
         elseif ($this->agama == "3")
-            return "Protistan";
+            return "Protestan";
         elseif ($this->agama == "4")
             return "Hindu";
         elseif ($this->agama == "5")
@@ -85,5 +85,35 @@ class Pegawai extends Model
             return 0;
         else
             return $g->tunjangan;
+    }
+
+    public function pGolTerahir()
+    {
+        //baca pangkat terakhir
+        $pangkat = \App\Models\RiwayatPangkat::where('status', 1)
+            ->where('pegawai_id', $this->id)
+            ->orderby('gaji_pokok', 'desc')->first();
+        if ($pangkat == null) {
+            return "Belum punya pangkat";
+        } else {
+            $pang = \App\Models\MstPangkat::find($pangkat->mst_pangkat_id);
+            return $pang->nama_pangkat . "/golongan : " . $pang->pangkat_gol;
+        }
+    }
+    static function masaKerjaGol($id)
+    {
+        //menghitung masa kerja golongan
+        $pangkat = \App\Models\RiwayatPangkat::where('status', 1)
+            ->where('pegawai_id', $id)
+            ->orderby('gaji_pokok', 'desc')->first();
+        $tgl_sekarang = new \DateTime();
+        if ($pangkat == null)
+            $tgl_terhitung = new \DateTime();
+        else
+            $tgl_terhitung = new \DateTime($pangkat->tanggal_tmt_pangkat);
+        //tanggal terhitung di sk - tanggal sekarang
+        $masa = $tgl_sekarang->diff($tgl_terhitung);
+        //hasilnya tahun dan bulan
+        return $masa->y . " tahun, " . $masa->m . " bulan";
     }
 }

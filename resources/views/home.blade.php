@@ -16,9 +16,10 @@
 
                     {{ __('You are logged in!') }}
                     <ul>
-                        <li><a href="/mst-pangkat">mst-pangkat</a></li>
-                        <li><a href="/mst-jabatan">mst-jabatan</a></li>
+                        <li><a href="/mst-pangkat">Master Pangkat</a></li>
+                        <li><a href="/mst-jabatan">Master Jabatan</a></li>
                         <li><a href="/pegawai">Pegawai</a></li>
+                        <li><a href="/riwayat-pangkat">Riwayat Pangkat</a></li>
                     </ul>
                 </div>
             </div>
