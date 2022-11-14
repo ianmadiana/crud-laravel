@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Pegawai;
 
-
 class RiwayatPangkat extends Model
 {
     protected $table = 'riwayat_pangkat';
@@ -35,3 +34,4 @@ class RiwayatPangkat extends Model
         return $pang;
     }
 }
+

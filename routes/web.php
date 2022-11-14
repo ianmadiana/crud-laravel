@@ -43,52 +43,43 @@ Route::get('/home', function() {
 
 Auth::routes();
 
-//riwayat pangkat modul 7----------------------------------------------------------
+//riwayat pangkat modul 7---------------------
 //index
 Route::get('/riwayat-pangkat', [RiwayatPangkatController::class, 'index']);
-
 //create
 Route::get('/riwayat-pangkat/create/{id}', [RiwayatPangkatController::class, 'create']);
-
 //show pegawai
 Route::get(
     '/riwayat-pangkat/proses/{id}',
     [RiwayatPangkatController::class, 'proses']
 )->name('index');
-
 //Menambahkan Kenaikan Pangkat
 Route::get(
     '/riwayat-pangkat/proses/{id}',
     [RiwayatPangkatController::class, 'proses']
 )->name('index1');
-
 //cetak
 Route::get('/riwayat-pangkat/cetak/{id}', [RiwayatPangkatController::class, 'cetak']);
-
 //store
 Route::post(
     '/riwayat-pangkat/store',
     [RiwayatPangkatController::class, 'store']
 )->name('riwayat-pangkat.store');
-
-//show, belum ada method show di controller, masih error
+//show, belum ada method show di controller
 Route::get(
     '/riwayat-pangkat/show/{id}',
     [RiwayatPangkatController::class, 'show']
 )->name('riwayat-pangkat.show');
-
 //edit
 Route::get(
     '/riwayat-pangkat/{id}/edit',
     [RiwayatPangkatController::class, 'edit']
 )->name('riwayat-pangkat.edit');
-
 //update
 Route::patch(
     '/riwayat-pangkat/update/{id}',
     [RiwayatPangkatController::class, 'update']
 )->name('riwayat-pangkat.update');
-
 //destroy
 Route::delete(
     '/riwayat-pangkat/destroy/{id}',
